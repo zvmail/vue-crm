@@ -64,6 +64,7 @@ const Permission = () => import('../views/permission/index');
 
 /* user mantance */
 const UserManage = () => import('../views/usermanage/index');
+const LocalStorage = () => import('../views/usermanage/localstorage');
 
 Vue.use(Router);
 
@@ -214,11 +215,13 @@ export const asyncRouterMap = [
   {
     path: '/usermange',
     component: Layout,
-    redirect: '/usermange/index',
+    redirect: 'noredirect',
     name: 'usermange',
     icon: 'theme',
-    noDropdown: true,
-    children: [{ path: 'index', component: UserManage, name: '用户管理' }]
+    noDropdown: false,
+    children: [{ path: 'index', component: UserManage, name: '用户管理' },
+               { path: 'localstorage', component: LocalStorage, name: '本地存储' }
+    ]
   },
   // 404 页面最后加载，才不会阻止其他页面
   { path: '*', redirect: '/404', hidden: true }
