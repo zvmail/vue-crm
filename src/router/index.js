@@ -120,6 +120,18 @@ export const asyncRouterMap = [
     children: [{ path: 'index', component: Permission, name: '权限测试页', meta: { role: ['admin'] } }]
   },
   {
+    path: '/test',
+    component: Layout,
+    redirect: 'noredirect',
+    name: '演练功能',
+    icon: 'theme',
+    noDropdown: false,
+    children: [{ path: 'index', component: UserManage, name: '用户管理' },
+               { path: 'localstorage', component: LocalStorage, name: '本地存储' },
+               { path: 'indexeddb', component: Indexeddb, name: '本地数据库' }
+    ]
+  },
+  {
     path: '/components',
     component: Layout,
     redirect: '/components/index',
@@ -211,18 +223,6 @@ export const asyncRouterMap = [
         ]
       },
       { path: 'form1', component: Form1, name: '综合form1' }
-    ]
-  },
-  {
-    path: '/usermange',
-    component: Layout,
-    redirect: 'noredirect',
-    name: 'usermange',
-    icon: 'theme',
-    noDropdown: false,
-    children: [{ path: 'index', component: UserManage, name: '用户管理' },
-               { path: 'localstorage', component: LocalStorage, name: '本地存储' },
-               { path: 'indexeddb', component: Indexeddb, name: '本地数据库' }
     ]
   },
   // 404 页面最后加载，才不会阻止其他页面

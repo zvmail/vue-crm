@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="components-container">
     <h3>浏览器数据库的使用</h3>
     <h4>增加记录，浏览列表</h4> 
     <el-button type="primary" icon="document" @click="add">ADD</el-button>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { getUserList, addUser } from '../../dao';
+import { getUserList, addUser } from 'dao/index';
 
 export default {
   name: 'indexeddb',

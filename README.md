@@ -79,6 +79,7 @@ const {
 
 利用mockjs，先定义api，然后mock目录定义返回mock对象，然后定义函数，在index.js关联url与函数
 
+新建的模块，例如dao，必须配置webpack的虚拟目录。在webpack.base.conf.js中resolve.alias
 
 
 **注意：该项目目前使用element-ui@1.3.3版本,所以最低兼容 Vue 2.3.0**

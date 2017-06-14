@@ -42,6 +42,7 @@
       components: { socialSign },
       name: 'login',
       data() {
+        // 如何配置校验
         const validateEmail = (rule, value, callback) => {
           if (!isWscnEmail(value)) {
             callback(new Error('请输入正确的合法邮箱'));
@@ -59,7 +60,7 @@
         return {
           loginForm: {
             email: 'admin@wallstreetcn.com',
-            password: ''
+            password: '123456'
           },
           loginRules: {
             email: [
@@ -80,15 +81,16 @@
       },
       methods: {
         handleLogin() {
+          // 先校验
           this.$refs.loginForm.validate(valid => {
             if (valid) {
               this.loading = true;
               this.$store.dispatch('LoginByEmail', this.loginForm).then(() => {
                 this.loading = false;
-                
+
                 // 此处：是否直接进入主页，或者跳入第三方验证
                 this.$router.push({ path: '/' });
-                //this.showDialog = true;
+                // this.showDialog = true;
               }).catch(err => {
                 this.$message.error(err);
                 this.loading = false;

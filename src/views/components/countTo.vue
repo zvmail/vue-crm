@@ -1,5 +1,6 @@
 <template>
   <div class="components-container">
+    <code>演示如何封装js对象为</code>
     <code>countTo 组件 <a href='https://github.com/PanJiaChen/vue-countTo' target='_blank'>线上地址</a></code>
 
   <count-to ref='example' class='example' :start-val='_startVal' :end-val='_endVal' :duration='_duration' :decimals='_decimals'
@@ -36,7 +37,7 @@
            setPrefix: '¥ '
          }
        },
-       computed: {
+       computed: {  // 传给组件的参数，利用computed进行参数检查，防止出错
          _startVal() {
            if (this.setStartVal) {
              return this.setStartVal

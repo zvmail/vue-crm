@@ -1,4 +1,4 @@
-// 定义共用的errorlog，不应该放在此目录
+// 定义共用的errorlog，我觉得不应该放在此目录
 // 在main.js中用到
 const errLog = {
   state: {

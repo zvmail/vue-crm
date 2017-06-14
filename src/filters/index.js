@@ -1,3 +1,6 @@
+/**
+ * 页面格式化的逻辑，例如时间，数字
+ */
 function pluralize(time, label) {
   if (time === 1) {
     return time + label
