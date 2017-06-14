@@ -33,6 +33,7 @@ module.exports = {
             'router': path.resolve(__dirname, '../src/router'),
             'mock': path.resolve(__dirname, '../src/mock'),
             'vendor': path.resolve(__dirname, '../src/vendor'),
+            'dao': path.resolve(__dirname, '../src/dao'),
             'static': path.resolve(__dirname, '../static')
         }
     },

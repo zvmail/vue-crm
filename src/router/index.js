@@ -65,6 +65,7 @@ const Permission = () => import('../views/permission/index');
 /* user mantance */
 const UserManage = () => import('../views/usermanage/index');
 const LocalStorage = () => import('../views/usermanage/localstorage');
+const Indexeddb = () => import('../views/usermanage/indexeddb');
 
 Vue.use(Router);
 
@@ -220,7 +221,8 @@ export const asyncRouterMap = [
     icon: 'theme',
     noDropdown: false,
     children: [{ path: 'index', component: UserManage, name: '用户管理' },
-               { path: 'localstorage', component: LocalStorage, name: '本地存储' }
+               { path: 'localstorage', component: LocalStorage, name: '本地存储' },
+               { path: 'indexeddb', component: Indexeddb, name: '本地数据库' }
     ]
   },
   // 404 页面最后加载，才不会阻止其他页面
