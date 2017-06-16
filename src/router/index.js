@@ -73,9 +73,11 @@ import Permission from '../views/permission/index';
 // const UserManage = resolve => require(['../views/usermanage/index'], resolve);
 const UserManage = r => require.ensure([], () => r(require('../views/usermanage/index.vue')), 'group-mantance')
 // import UserManage from '../views/usermanage/index';
-
 import LocalStorage from '../views/usermanage/localstorage';
 import Indexeddb from '../views/usermanage/indexeddb';
+import Websocket from '../views/usermanage/websocket';
+
+
 
 Vue.use(Router);
 
@@ -138,7 +140,8 @@ export const asyncRouterMap = [
     noDropdown: false,
     children: [{ path: 'index', component: UserManage, name: '用户管理' },
                { path: 'localstorage', component: LocalStorage, name: '本地存储' },
-               { path: 'indexeddb', component: Indexeddb, name: '本地数据库' }
+               { path: 'indexeddb', component: Indexeddb, name: '本地数据库' },
+               { path: 'websocket', component: Websocket, name: 'WebSocket' }
     ]
   },
   {

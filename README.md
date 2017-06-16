@@ -5,8 +5,7 @@
 - 模块方式的增删改查，分页，结合后台springboot jpa
 - 页面之间的数据共享 vuex
 - 定制一个用户模块，参数传递
-
-
+- websocket client
 
 
 ## 实现的功能
