@@ -7,65 +7,75 @@ import Layout from '../views/layout/Layout';
 
 /* login */
 import Login from '../views/login/';
-const authRedirect = () => import('../views/login/authredirect');
-const sendPWD = () => import('../views/login/sendpwd');
-const reset = () => import('../views/login/reset');
+import authRedirect from '../views/login/authredirect';
+import sendPWD from '../views/login/sendpwd';
+import reset from '../views/login/reset';
 
 /* dashboard */
-const dashboard = () => import('../views/dashboard/index');
+import dashboard from '../views/dashboard/index';
 
 /* Introduction */
-const Introduction = () => import('../views/introduction/index');
+import Introduction from '../views/introduction/index';
 
 /* components */
 const componentsIndex = () => import('../views/components/index');
-const Tinymce = () => import('../views/components/tinymce');
-const Markdown = () => import('../views/components/markdown');
-const JsonEditor = () => import('../views/components/jsoneditor');
-const DndList = () => import('../views/components/dndlist');
-const AvatarUpload = () => import('../views/components/avatarUpload');
-const Dropzone = () => import('../views/components/dropzone');
-const Sticky = () => import('../views/components/sticky');
-const SplitPane = () => import('../views/components/splitpane');
-const CountTo = () => import('../views/components/countTo');
-const Mixin = () => import('../views/components/mixin');
+// const componentsIndex = resolve => require(['../views/components/index'], resolve);
+// import componentsIndex from '../views/components/index';
+import Tinymce from '../views/components/tinymce';
+import Markdown from '../views/components/markdown';
+import JsonEditor from '../views/components/jsoneditor';
+import DndList from '../views/components/dndlist';
+import AvatarUpload from '../views/components/avatarUpload';
+import Dropzone from '../views/components/dropzone';
+import Sticky from '../views/components/sticky';
+import SplitPane from '../views/components/splitpane';
+import CountTo from '../views/components/countTo';
+import Mixin from '../views/components/mixin';
 
 
 /* charts */
-const chartIndex = () => import('../views/charts/index');
-const KeyboardChart = () => import('../views/charts/keyboard');
-const KeyboardChart2 = () => import('../views/charts/keyboard2');
-const LineMarker = () => import('../views/charts/line');
-const MixChart = () => import('../views/charts/mixchart');
+import chartIndex from '../views/charts/index';
+import KeyboardChart from '../views/charts/keyboard';
+import KeyboardChart2 from '../views/charts/keyboard2';
+import LineMarker from '../views/charts/line';
+import MixChart from '../views/charts/mixchart';
+import BaseCharts from '../views/charts/BaseCharts';
 
 /* error page */
-const Err404 = () => import('../views/error/404');
-const Err401 = () => import('../views/error/401');
+import Err404 from '../views/error/404';
+import Err401 from '../views/error/401';
 
 /* error log */
-const ErrorLog = () => import('../views/errlog/index');
+import ErrorLog from '../views/errlog/index';
 
 /* excel */
-const ExcelDownload = () => import('../views/excel/index');
+import ExcelDownload from '../views/excel/index';
 
 /* theme  */
-const Theme = () => import('../views/theme/index');
+import Theme from '../views/theme/index';
 
 /* example*/
-const TableLayout = () => import('../views/example/table/index');
-const DynamicTable = () => import('../views/example/table/dynamictable');
-const Table = () => import('../views/example/table/table');
-const DragTable = () => import('../views/example/table/dragTable');
-const InlineEditTable = () => import('../views/example/table/inlineEditTable');
-const Form1 = () => import('../views/example/form1');
+import TableLayout from '../views/example/table/index';
+import DynamicTable from '../views/example/table/dynamictable';
+import Table from '../views/example/table/table';
+import DragTable from '../views/example/table/dragTable';
+import InlineEditTable from '../views/example/table/inlineEditTable';
+import VueTable from '../views/example/table/VueTable';
+
+import Form1 from '../views/example/form1';
 
 /* permission */
-const Permission = () => import('../views/permission/index');
+import Permission from '../views/permission/index';
 
 /* user mantance */
-const UserManage = () => import('../views/usermanage/index');
-const LocalStorage = () => import('../views/usermanage/localstorage');
-const Indexeddb = () => import('../views/usermanage/indexeddb');
+// 试验几种动态加载和打包方法
+// const UserManage = () => import('../views/usermanage/index');
+// const UserManage = resolve => require(['../views/usermanage/index'], resolve);
+const UserManage = r => require.ensure([], () => r(require('../views/usermanage/index.vue')), 'group-mantance')
+// import UserManage from '../views/usermanage/index';
+
+import LocalStorage from '../views/usermanage/localstorage';
+import Indexeddb from '../views/usermanage/indexeddb';
 
 Vue.use(Router);
 
@@ -162,7 +172,8 @@ export const asyncRouterMap = [
       { path: 'keyboard', component: KeyboardChart, name: '键盘图表' },
       { path: 'keyboard2', component: KeyboardChart2, name: '键盘图表2' },
       { path: 'line', component: LineMarker, name: '折线图' },
-      { path: 'mixchart', component: MixChart, name: '混合图表' }
+      { path: 'mixchart', component: MixChart, name: '混合图表' },
+      { path: 'basecharts', component: BaseCharts, name: 'vue-echart3' }
     ]
   },
   {
@@ -219,7 +230,8 @@ export const asyncRouterMap = [
           { path: 'dynamictable', component: DynamicTable, name: '动态table' },
           { path: 'dragtable', component: DragTable, name: '拖拽table' },
           { path: 'inline_edit_table', component: InlineEditTable, name: 'table内编辑' },
-          { path: 'table', component: Table, name: '综合table' }
+          { path: 'table', component: Table, name: '综合table' },
+          { path: 'vuetable', component: VueTable, name: 'vue-datasource' }
         ]
       },
       { path: 'form1', component: Form1, name: '综合form1' }
