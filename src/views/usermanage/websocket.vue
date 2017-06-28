@@ -41,11 +41,6 @@ export default {
           , null, { sessionId: () => this.username });
       // console.log(sock);
 
-      sock.onclose = function() {
-        this.isConnected = false;
-        console.log('close');
-      };
-
       this.stompClient = Stomp.over(sock);
 
       this.stompClient.connect({}, () => {
