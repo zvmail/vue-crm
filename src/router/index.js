@@ -76,6 +76,7 @@ const UserManage = r => require.ensure([], () => r(require('../views/usermanage/
 import LocalStorage from '../views/usermanage/localstorage';
 import Indexeddb from '../views/usermanage/indexeddb';
 import Websocket from '../views/usermanage/websocket';
+import componentParent from '../views/usermanage/componentParent'
 
 
 
@@ -141,7 +142,8 @@ export const asyncRouterMap = [
     children: [{ path: 'index', component: UserManage, name: '用户管理' },
                { path: 'localstorage', component: LocalStorage, name: '本地存储' },
                { path: 'indexeddb', component: Indexeddb, name: '本地数据库' },
-               { path: 'websocket', component: Websocket, name: 'WebSocket' }
+               { path: 'websocket', component: Websocket, name: 'WebSocket' },
+               { path: 'componentParent', component: componentParent, name: '嵌套组件' }
     ]
   },
   {

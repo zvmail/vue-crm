@@ -14,8 +14,16 @@ mobile封装： cordova
 
 - 手机放简单js，跳转远程服务器地址，类似之前的程序。需要考虑资源(JQuery等库文件)本地存放，减少流量
 
+- CORDOVA 代码热更新解决方案 [本机代码自动更新！] (http://www.huangwenchao.com.cn/2017/04/cordova-%E4%BB%A3%E7%A0%81%E7%83%AD%E6%9B%B4%E6%96%B0%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html)
+
+
+
 >跳转原生browser，然后跳回，[请参考]( http://www.cnblogs.com/tianyalu/p/5268316.html)
 >>区块引用
+
+
+利用[electron](https://electron.atom.io/)打造跨平台的桌面应用
+
 
 与spring 响应式redex集成
 
