@@ -7,6 +7,15 @@
 - 定制一个用户模块，参数传递
 
 
+参考inoic的手机端UI：https://wangdahoo.github.io/vonic-documents/#/
+微信：  https://weui.io/#
+
+table 组件：https://github.com/njleonzhang/vue-data-tables
+
+增加pug scss
+
+
+
 mobile封装： cordova
 有2种方式： 
 - 打包js到手机，访问本机，跨域API，缺点是文件更新， [参考](https://segmentfault.com/a/1190000008281748)

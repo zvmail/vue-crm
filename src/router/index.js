@@ -77,7 +77,7 @@ import LocalStorage from '../views/usermanage/localstorage';
 import Indexeddb from '../views/usermanage/indexeddb';
 import Websocket from '../views/usermanage/websocket';
 import componentParent from '../views/usermanage/componentParent'
-
+import elmTables from '../views/usermanage/elmTables'
 
 
 Vue.use(Router);
@@ -143,7 +143,8 @@ export const asyncRouterMap = [
                { path: 'localstorage', component: LocalStorage, name: '本地存储' },
                { path: 'indexeddb', component: Indexeddb, name: '本地数据库' },
                { path: 'websocket', component: Websocket, name: 'WebSocket' },
-               { path: 'componentParent', component: componentParent, name: '嵌套组件' }
+               { path: 'componentParent', component: componentParent, name: '嵌套组件' },
+               { path: 'emltables', component: elmTables, name: 'Elm Table' }
     ]
   },
   {

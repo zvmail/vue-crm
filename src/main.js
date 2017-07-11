@@ -21,12 +21,14 @@ import vueWaves from './directive/waves';// 水波纹指令
 import errLog from 'store/errLog';// error log组件
 import './mock/index.js';  // 该项目所有请求使用mockjs模拟
 import FastClick from 'fastclick';
+import DataTables from 'vue-data-tables';
 
 // register globally
 Vue.component('multiselect', Multiselect);
 Vue.component('Sticky', Sticky);
 Vue.use(ElementUI);
 Vue.use(vueWaves);
+Vue.use(DataTables);
 
 FastClick.attach(document.body); // 加快手机点击速度
 

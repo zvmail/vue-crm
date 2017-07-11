@@ -15,8 +15,8 @@
 <script>
 export default {
   id: 'child',
-  props: ['myName'],
-  data: () => {
+  props: ['myName'], // 利用props属性，父组件可以赋值给子控件
+  data() {
     return {
       name: 'Vincent',
       input_return: ''

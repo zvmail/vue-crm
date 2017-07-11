@@ -15,7 +15,7 @@ module.exports = {
     output: {
         path: config.build.assetsRoot,
         filename: '[name].js',
-        publicPath: process.env.NODE_ENV !== 'development' ?  config.build.assetsPublicPath: config.dev.assetsPublicPath
+        publicPath: process.env.NODE_ENV !== 'development' ? config.build.assetsPublicPath : config.dev.assetsPublicPath
     },
     resolve: {
         extensions: ['.js', '.vue', '.json'],
@@ -51,7 +51,8 @@ module.exports = {
             //         formatter: require('eslint-friendly-formatter')
             //     }
             // },
-            { test: /\.vue$/,
+            {
+                test: /\.vue$/,
                 loader: 'vue-loader',
                 options: vueLoaderConfig
             },
@@ -67,6 +68,18 @@ module.exports = {
                     limit: 10000,
                     name: utils.assetsPath('img/[name].[hash:7].[ext]')
                 }
+            },
+            {
+                test: /\.scss$/,
+                loader: 'style!css!sass?sourceMap'
+            },
+            {
+                test: /\.jade$/,
+                loader: "jade"
+            },
+            {
+                test: /\.pug$/,
+                loader: 'pug'
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
